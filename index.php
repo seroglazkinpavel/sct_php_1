@@ -1,17 +1,29 @@
+<?php
+    $name = 'Урок 5';
+	$main = '/sct_php_1/';
+	$about_us = '/sct_php_1/pages/1.php';
+	$pictures = '/sct_php_1/pages/2.php';
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <title>Урок 4</title>
+		<link rel="stylesheet" href="style.css">
+        <title><?=$name ?></title>
     </head>
     <body>
-        <?='<h1>Привет мир!</h1>' ?>
-        <?="<p>Тема урока:'Базовый синтаксис php'.</p>" ?>
-        <?="<p>Необходимо выполнить задание.</p>" ?>
-        <a href="<?='php/1.php';?>">Переход на 1.php файл</a><br>
-        <a href="<?='php/2.php';?>">Переход на 2.php файл</a><br>
-        <a href="<?='/sct_php_1';?>">Переход на index.php файл</a><br>
-        <div style="margin-top:10px;"><img src="<? echo 'images/cats.gif';?>" alt="Картинка"></div>
+		<main>
+			<header>
+				<h2><?=$name?></h2>
+				<nav>
+					<ul>
+						<li><a href="<?=$main;?>">Главная</a></li>
+						<li><a href="<?=$about_us;?>">О нас</a></li>
+						<li><a href="<?=$pictures;?>">Картинки</a></li>
+					</ul>
+				</nav>
+			</header>
+		</main>	
     </body>
 </html>
 
