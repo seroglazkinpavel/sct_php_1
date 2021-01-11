@@ -5,7 +5,7 @@
     $subtract = $a - $b;
     $multiply = $a * $b;
     if($b == 0) echo 'На 0 делить нельзя';
-	if($b !== 0) $divide = $a / $b;
+    if($b !== 0) $divide = $a / $b;
     $operation = $add;
     $isAvailableCalculation = true;
 ?>
@@ -18,8 +18,8 @@
     <body>
         <main>
             <?php
-				if(!$isAvailableCalculation) echo 'вычисления не доступно';				
-			?>               
+		if(!$isAvailableCalculation) echo 'вычисления не доступно';						
+	    ?>		               
             <select <?php if(!$isAvailableCalculation) echo 'hidden';?>>
                 <option disabled>Выберите действие</option>
                 <option <?php if($operation == $add) echo "selected"?> value="add"><?=$add .' = ' . "$a".' + '."$b"?></option>
