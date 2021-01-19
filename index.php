@@ -5,7 +5,7 @@
     $subtract = $a - $b;
     $multiply = $a * $b;
     if($b == 0) echo 'На 0 делить нельзя';
-	if($b !== 0) $divide = $a / $b;
+    if($b !== 0) $divide = $a / $b;
     $operation = 'divide';
     $isAvailableCalculation = false;
 ?>
