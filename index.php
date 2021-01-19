@@ -6,8 +6,8 @@
     $multiply = $a * $b;
     if($b == 0) echo 'На 0 делить нельзя';
 	if($b !== 0) $divide = $a / $b;
-    $operation = $add;
-    $isAvailableCalculation = true;
+    $operation = 'divide';
+    $isAvailableCalculation = false;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -22,12 +22,11 @@
 			?>               
             <select <?php if(!$isAvailableCalculation) echo 'hidden';?>>
                 <option disabled>Выберите действие</option>
-                <option <?php if($operation == $add) echo "selected"?> value="add"><?=$add .' = ' . "$a".' + '."$b"?></option>
-                <option <?php if($operation == $subtract) echo "selected"?> value="subtract"><?=$subtract?></option>
-                <option <?php if($operation == $multiply) echo "selected"?> value="multiply"><?=$multiply?></option>
-                <option <?php if($operation == $divide) echo "selected"?> value="$divide"><?=$divide?></option>
+                <?php if($operation == 'add') echo '<option "selected" value="add">'."$add".'</option>';?>
+                <?php if($operation == 'subtract') echo '<option "selected" value="subtract">'."$subtract".'</option>';?>
+                <?php if($operation == 'multiply') echo '<option "selected" value="multiply">'."$multiply".'</option>';?>
+                <?php if($operation == 'divide') echo '<option "selected" value="divide">'."$divide".'</option>';?>
             </select>
         </main>
     </body>
-</html>
-   
+</html>  
