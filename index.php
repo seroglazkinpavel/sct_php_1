@@ -18,8 +18,8 @@
     <body>
         <main>
             <?php
-				if(!$isAvailableCalculation) echo 'вычисления не доступно';				
-			?>               
+		if(!$isAvailableCalculation) echo 'вычисления не доступно';						
+	    ?>		               
             <select <?php if(!$isAvailableCalculation) echo 'hidden';?>>
                 <option disabled>Выберите действие</option>
                 <?php if($operation == 'add') echo '<option "selected" value="add">'."$add".'</option>';?>
@@ -29,4 +29,9 @@
             </select>
         </main>
     </body>
+<<<<<<< HEAD
 </html>  
+=======
+</html>
+   
+>>>>>>> origin/lesson_8
