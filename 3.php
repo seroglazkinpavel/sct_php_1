@@ -1,57 +1,10 @@
 <?php
-$x = "";
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = null;
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x;
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$X;
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = array();
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = array('a', 'b');
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "0";
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = false;
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = true;
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = 1;
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = 42;
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = 0;
-var_dump($c = empty($x));// bool(true)
-echo '<br>';
-$x = -1;
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = 1;
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "1";
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "-1";
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "php";
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "true";
-var_dump($c = empty($x));// bool(false)
-echo '<br>';
-$x = "false";
-var_dump($c = empty($x));// bool(false)
+$x1 = rand(-100, 100);
+$x2 = rand(-100, 100);
+if($x1 >= 0 && $x2 >= 0) {
+    echo '$x1 = ' . $x1 . ' $x2 = ' . $x2 . ' Обе переменные положительные.';
+}elseif($x1 < 0 && $x2 < 0) {
+    echo '$x1 = ' . $x1 . ' $x2 = ' . $x2 . ' Обе переменные отрицательные.';
+}elseif($x1 < 0 && $x2 > 0 || $x1 > 0 && $x2 < 0) {
+    echo '$x1 = ' . $x1 . ' $x2 = ' . $x2 . ' Переменные имеют разные знаки.';
+}
