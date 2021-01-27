@@ -1,25 +1,19 @@
 <?php
-function ageAddressName($age, $address, $name)
+/**
+ * @param $name
+ * @param null $address
+ * @param null $age
+ */
+function ageAddressName($name, $address = NULL, $age = NULL)
 {
-    $result = (string)$age;
-    $rest = substr($result, -1);
-    switch ($rest) {
-        case 1:
-            echo "Возраст {$age} год, адресс {$address}, имя {$name}";
-            break;
-        case 2:
-            echo "Возраст {$age} года, адресс {$address}, имя {$name}";
-            break;
-        case 3:
-            echo "Возраст {$age} года, адресс {$address}, имя {$name}";
-            break;
-        case 4:
-            echo "Возраст {$age} года, адресс {$address}, имя {$name}";
-            break;
-        default:
-            echo "Возраст {$age} лет, адресс {$address}, имя {$name}";
+    if(isset($name, $address, $age)) {
+        echo "Имя: {$name}. Адрес: {$address}. Возраст: {$age}.";
+    }elseif(isset($name, $address)) {
+        echo "Имя: {$name}. Адрес: {$address}.";
+    }else{
+        echo "Имя: {$name}. Возраст: {$age}.";
     }
 }
-ageAddressName(57, 'Астрахань ул. Боевая д 36', 'Викор');
+ageAddressName('Pavel', NULL, 43);
 
 

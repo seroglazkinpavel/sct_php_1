@@ -1,25 +1,14 @@
 <?php
-function getResult($a, $b, $result)
+/**
+ * @param int $a
+ * @param int $b
+ * @param int $c
+ * @return int
+ */
+
+function getResult(int$a, int$b, int$c = 5):int
 {
-    switch ($result) {
-        case 'sum':
-            echo $a + $b;
-            break;
-        case sub:
-            echo $a - $b;
-            break;
-        case mult:
-            echo $a * $b;
-            break;
-        case div:
-            If($b == 0){
-                echo 'На 0 делить нельза';
-            }elseif($b != 0) {
-                echo $a / $b;
-            }
-            break;
-        default:
-            echo "Такого математического действия нет";
-    }
+    return min($a, $b, $c);
 }
-getResult(4, 1, 'div');
+
+var_dump(getResult('1',-7));
