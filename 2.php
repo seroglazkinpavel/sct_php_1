@@ -5,13 +5,13 @@ function getResult($a, $b, $result)
         case 'sum':
             echo $a + $b;
             break;
-        case sub:
+        case 'sub':
             echo $a - $b;
             break;
-        case mult:
+        case 'mult':
             echo $a * $b;
             break;
-        case div:
+        case 'div':
             If($b == 0){
                 echo 'На 0 делить нельза';
             }elseif($b != 0) {
