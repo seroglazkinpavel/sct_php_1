@@ -1,14 +1,11 @@
 <?php
-/**
- * @param int $a
- * @param int $b
- * @param int $c
- * @return int
- */
 
-function getResult(int$a, int$b, int$c = 5):int
+function getCount()
 {
-    return min($a, $b, $c);
+	static $count = 0;
+	$count ++;
+	return $count;
 }
-
-var_dump(getResult('1',-7));
+echo getCount().'<br>';
+echo getCount().'<br>';
+echo getCount().'<br>';
