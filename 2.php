@@ -2,9 +2,9 @@
 
 function getCount()
 {
-	static $count = 0;
-	$count ++;
-	return $count;
+    static $coun = 0;
+    $count ++;	
+    return $count;
 }
 echo getCount().'<br>';
 echo getCount().'<br>';
