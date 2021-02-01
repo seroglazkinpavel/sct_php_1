@@ -2,7 +2,7 @@
 
 function getCount()
 {
-    static $coun = 0;
+    static $count = 0;
     $count ++;	
     return $count;
 }
