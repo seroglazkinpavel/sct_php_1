@@ -1,14 +1,15 @@
 <?php
-$count = 0;
-function getCount()
+function GetDateFormat($str)
 {
-    global $count;
-	$count ++;
-	return $count;
+	$time = strtotime($str);
+	$format = date("d-m-Y", $time);
+	return $format;
 }
-echo getCount().'<br>';
-echo getCount().'<br>';
-echo getCount().'<br>';
-echo getCount().'<br>';
+ echo $format = GetDateFormat('2020-01-28');
+
+
+
+
+
 
 

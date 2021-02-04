@@ -1,26 +1,39 @@
 <?php
-$a = 24;
-$first = $a;
-function up(&$x, $t)
-{
-	global $first;
-	$x = $x + $t;
-	$fluct = $x - $first;
-	return "Первоначальня температура $first, колебания $fluct, конечное состояние $x";
+
+function getContent()
+{   
+    $str_3 = '<html>
+				<head>
+					<title>{{TITLE}}</title>
+				</head>
+				<body>
+					 {{CONTENT}}
+				</body>
+		   </html>';
+	return	$str_3 ;   
 }
 
-function down(&$x, $t)
-{
-	global $first;
-	$x = $x - $t;
-	$fluct = $x - $first;
-	return "Первоначальня температура $first, колебания $fluct, конечное состояние $x";
+function replaceTitle($string_1, $string_2)
+{	
+	$title = str_replace($string_1, $string_2, "{{TITLE}}");
+    return $title;
 }
-echo up($a, 4).'<br>';
+ $title = replaceTitle('{{TITLE}}', 'Главная страница');
 
-echo down($a, 5).'<br>';
+function replaceContent($str_1, $str_2)
+{
+	$content = str_replace($str_1, $str_2, "{{CONTENT}}");
+    return $content;
+}
+ $content = replaceContent('{{CONTENT}}', 'Привет мир');
 
-echo up($a, 1).'<br>';
+$str_3 = getContent();
 
-echo down($a, 2).'<br>';
-
+function getReplace($string, $str)
+{
+	global $str_3;
+	if(($string == '{{TITLE}}') || ($string == '{{CONTENT}}')) {
+		return $string_3 = str_replace($string, $str, $str_3);
+	}else return false;
+}
+echo $string_3 = getReplace('{{CONTENT}}', 'Главная страница'); 

@@ -1,11 +1,14 @@
 <?php
 
-function getCount()
+function register ($str)
 {
-	static $count = 0;
-	$count ++;
-	return $count;
+    $str = preg_replace('/\s+/', '_', ucfirst(mb_strtolower($str)));
+    if((substr($str, -1)) !== '!' && (substr($str, -1)) !== '.' && (substr($str, -1)) !== '?'){
+       return $str . '.';
+    }
+
 }
-echo getCount().'<br>';
-echo getCount().'<br>';
-echo getCount().'<br>';
+$str = 'f S g e D l L';
+echo register($str);
+
+
