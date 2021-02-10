@@ -2,7 +2,7 @@
 
 function getContent()
 {   
-    $str_3 = '<html>
+    $str = '<html>
 				<head>
 					<title>{{TITLE}}</title>
 				</head>
@@ -10,30 +10,30 @@ function getContent()
 					 {{CONTENT}}
 				</body>
 		   </html>';
-	return	$str_3 ;   
+	   
+	return	$str;   
 }
+$str = getContent();
 
-function replaceTitle($string_1, $string_2)
+function replaceTitle($string_1, $string_2, $str)
 {	
-	$title = str_replace($string_1, $string_2, "{{TITLE}}");
+    $title = str_replace($string_1, $string_2, $str);
     return $title;
 }
- $title = replaceTitle('{{TITLE}}', 'Главная страница');
-
-function replaceContent($str_1, $str_2)
+ 
+function replaceContent($str_1, $str_2, $str)
 {
-	$content = str_replace($str_1, $str_2, "{{CONTENT}}");
+	$content = str_replace("{{CONTENT}}", $str_2, $str);
     return $content;
 }
- $content = replaceContent('{{CONTENT}}', 'Привет мир');
 
-$str_3 = getContent();
-
-function getReplace($string, $str)
-{
-	global $str_3;
-	if(($string == '{{TITLE}}') || ($string == '{{CONTENT}}')) {
-		return $string_3 = str_replace($string, $str, $str_3);
+ function getReplace($string, $string_2, $str)
+{	
+	if($string == 'title') {
+		return $str = replaceTitle('{{TITLE}}', $string_2, $str);		
+	}elseif($string == 'content') {
+		return $str = replaceContent('{{CONTENT}}', $string_2, $str);
 	}else return false;
 }
-echo $string_3 = getReplace('{{CONTENT}}', 'Главная страница'); 
+  $content = getReplace('content', 'Hello world!', $str);
+ echo $title = getReplace('title', 'Главная страница', $content);
