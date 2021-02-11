@@ -1,14 +1,13 @@
 <?php
 
-function register ($str)
+function evenOdd()
 {
-    $str = preg_replace('/\s+/', '_', ucfirst(mb_strtolower($str)));
-    if((substr($str, -1)) !== '!' && (substr($str, -1)) !== '.' && (substr($str, -1)) !== '?'){
-       return $str . '.';
+    for($i = 0; $i <= 10; $i++){
+        if($i % 2 == 0){
+            echo "$i - четное число <br>";
+        }else echo "$i - не четное число <br>";
     }
-
 }
-$str = 'f S g e D l L';
-echo register($str);
+evenOdd();
 
 

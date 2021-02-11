@@ -1,0 +1,32 @@
+/* черный фон сайта */
+body {
+ background-color: #000;
+}
+
+.main {
+	border: 6px solid #fff;
+	width: 380px;
+	height: 193px;
+	margin: 350px auto;
+}
+
+table {
+	border: 1px solid grey;
+    /*border: 6px solid #fff;*/    /* внешние границы таблицы серого цвета толщиной 1px */
+	border-collapse: collapse; /*Промежутки между ячейками таблицы убираются с помощью свойства*/
+	/*margin: 350px auto;*/
+	width: 380px;
+	font-size : 20px;
+}
+
+th {
+   border: 1px solid grey;    /* границы ячеек первого ряда таблицы */
+   padding-top: 20px;
+   padding-bottom: 20px ;
+}
+
+td {
+   border: 1px solid grey;    /* границы ячеек тела таблицы */
+   padding: 20px 10px;
+}
+

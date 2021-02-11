@@ -1,39 +1,35 @@
-<?php
-
-function getContent()
-{   
-    $str_3 = '<html>
-				<head>
-					<title>{{TITLE}}</title>
-				</head>
-				<body>
-					 {{CONTENT}}
-				</body>
-		   </html>';
-	return	$str_3 ;   
-}
-
-function replaceTitle($string_1, $string_2)
-{	
-	$title = str_replace($string_1, $string_2, "{{TITLE}}");
-    return $title;
-}
- $title = replaceTitle('{{TITLE}}', 'Главная страница');
-
-function replaceContent($str_1, $str_2)
-{
-	$content = str_replace($str_1, $str_2, "{{CONTENT}}");
-    return $content;
-}
- $content = replaceContent('{{CONTENT}}', 'Привет мир');
-
-$str_3 = getContent();
-
-function getReplace($string, $str)
-{
-	global $str_3;
-	if(($string == '{{TITLE}}') || ($string == '{{CONTENT}}')) {
-		return $string_3 = str_replace($string, $str, $str_3);
-	}else return false;
-}
-echo $string_3 = getReplace('{{CONTENT}}', 'Главная страница'); 
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="../style.css" rel="stylesheet" type="text/css" media="all">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<body>
+		<div>
+			<div class="main">
+				<table>
+					<colgroup>
+						<col span="2" style="background:Khaki"><!-- С помощью этой конструкции задаем цвет фона для первых двух столбцов таблицы-->
+						<col style="background-color:LightCyan"><!-- Задаем цвет фона для следующего (одного) столбца таблицы-->
+					</colgroup>
+					<tr>
+						<th>№ п/п</th>
+						<th>Наименование</th>
+						<th>Цена, руб.</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Карандаш цветной</td>
+						<td>20,00</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Линейка 20 см</td>
+						<td>30,00</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

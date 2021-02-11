@@ -1,11 +1,13 @@
 <?php
-function GetDateFormat($str)
+function mySort($a, $b)
 {
-	$time = strtotime($str);
-	$format = date("d-m-Y", $time);
-	return $format;
+	if($a == $b) {
+	    echo 'Числа равны';
+    }elseif($a > $b) {
+        echo "$b $a";
+    }else echo "$a $b";
 }
- echo $format = GetDateFormat('2020-01-28');
+  mySort(8, 4);
 
 
 
