@@ -1,13 +1,9 @@
 <?php
-
-function evenOdd()
-{
-    for($i = 0; $i <= 10; $i++){
-        if($i == 0){			
-			echo  "0 тоже четное число<br>";
-        }elseif($i % 2 == 0){    
-		    echo "$i - четное число <br>";
-        }else echo "$i - не четное число <br>";
-    }
+$arrey = [
+    'Политика' => '<a href="http://politics.ru">Политика</a>',
+    'Общество' => '<a href="http://society.ru">Общество</a>',
+    'Экономика' => '<a href="http://economy.ru">Экономика</a>'
+];
+foreach ($arrey as $key => $value) {
+    echo "$key => $value" .'<br>';
 }
-evenOdd();
