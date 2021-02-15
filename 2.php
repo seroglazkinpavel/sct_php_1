@@ -1,9 +1,9 @@
 <?php
 $arrey = [
-    'Политика' => '<a href="http://politics.ru">Политика</a>',
-    'Общество' => '<a href="http://society.ru">Общество</a>',
-    'Экономика' => '<a href="http://economy.ru">Экономика</a>'
+    'Политика' => 'href="http://politics.ru"',
+    'Общество' => 'href="http://society.ru"',
+    'Экономика' => 'href="http://economy.ru"'
 ];
 foreach ($arrey as $key => $value) {
-    echo "$key => $value" .'<br>';
+    echo '<a href="$value">'.$key.'</a><br>';
 }
