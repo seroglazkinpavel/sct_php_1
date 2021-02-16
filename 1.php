@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
-<body>
-<ul>
-    <li><a href="http://politics.ru">Политика</a></li>
-    <li><a href="http://society.ru">Общество</a></li>
-    <li><a href="http://economy.ru">Экономика</a></li>
-</ul>
-</body>
-</html>
+<?php
+$arr_1 = [2, 5, 7, 6];
+$arr_2 = [3, 2, 5, 1, 9];
+$result = array_diff($arr_1, $arr_2);
+echo '<pre>';
+print_r($result);
+echo '</pre><br>';
+
+$result_1 = array_diff($arr_2, $arr_1);
+echo '<pre>';
+print_r($result_1);
+echo '</pre>';
