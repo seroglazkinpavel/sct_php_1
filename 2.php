@@ -5,15 +5,16 @@
 </head>
 <body>
 	<h1>Калькулятора</h1>
-	<form action='' method='post' class="calculate-form">
-		<input type="text" name="number1" class="numbers" placeholder="Первое число">
+	<form action="<?=$_SERVER['REQUEST_URI']?>" method='post'>
+		<input type="text" name="number1" value="<?=($_POST['number1']);?>" placeholder="Первое число">
 		<select class="operations" name="operation">
+			<option >Выберите действия</option>
 			<option value='plus'>+</option>
 			<option value='minus'>-</option>
 			<option value="multiply">*</option>
 			<option value="divide">/</option>
 		</select>
-		<input type="text" name="number2" class="numbers" placeholder="Второе число">
+		<input type="text" name="number2" value="<?=($_POST['number2']);?>" placeholder="Второе число">
 		
 		<input class="submit_form" type="submit" name="submit" value="Получить ответ"> 
 	</form>
