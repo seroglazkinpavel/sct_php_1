@@ -1,21 +1,25 @@
-<?php
+<?PHP
+$page = $_GET[page];
+switch($page){
+	case 1:
+	    echo '<a href="php/sct_php_1/1.php?page=1">Я помню чудное мгновенье...</a>';
+	    break;
+	case 2:
+	    echo '<a href="php/sct_php_1/1.php?page=2">Евгений Онегин</a>';
+	    break;
+	case 3:
+	    echo '<a href="php/sct_php_1/1.php?page=3">Зимнее утро</a>';
+	    break;
+	case 4:
+	    echo '<a href="php/sct_php_1/1.php?page=4">Осень</a>';
+	    break;
+	default:
+		echo '<a href="php/sct_php_1/1.php?page=1">Я помню чудное мгновенье...</a><br>
+		     <a href="php/sct_php_1/1.php?page=2">Евгений Онегин</a></a><br>
+			 <a href="php/sct_php_1/1.php?page=3">Зимнее утро</a><br>
+			 <a href="php/sct_php_1/1.php?page=4">Осень</a>';
+}
 
-$jsonString = '
-{                                         
-  "рабочий телефон": 89050506568,                       
-  "домашний телефон": 8905050654,            
-  "соседский телефон": 335566
-}                                         
-';
-// преобразования строки JSON в виде ассоциированного массива
 
-$cart = json_decode( $jsonString, true);
-echo '<pre>';
-print_r($cart);
-echo '</pre><br>';
-
-// Функция json_encode() принимает массив и возвращает строку JSON
-
-echo json_encode( $cart, JSON_UNESCAPED_UNICODE );
 
 
