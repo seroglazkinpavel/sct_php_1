@@ -6,21 +6,18 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<a href="1.php?login=$login">логин</a>
-		<a href="1.php?password=$password">пароль</a>
-		<a href="1.php?age=$age">возраст</a>
+		<a href="1.php?login=Петя">логин</a>
+		<a href="1.php?password=123">пароль</a>
+		<a href="1.php?age=45">возраст</a>
 		<a href="/">очистить</a>
 		<?PHP
 			echo '<br>';
 			
 			function getUserData($get){
-				//$login = $_GET[login];
-				//$password = $_GET[password];
-				//$age = $_GET[age];
-				if(!empty(($_GET[login]) || ($_GET[password]) || ($_GET[age]))){
-					echo '<pre>';
-					print_r($get);
-					echo '</pre>';
+				if(!empty(($_GET['login']) || ($_GET['password']) || ($_GET['age']))){
+					if($_GET['login']) echo 'логин-'.$_GET['login'];
+					elseif($_GET['password']) echo 'паспорт-'.$_GET['password'];
+					elseif($_GET['age']) echo 'возраст-'.$_GET['age'];
 				}else echo '<br>данных нет';
 			}
 			getUserData($_GET);
