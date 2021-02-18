@@ -1,25 +1,28 @@
-<?PHP
-$page = $_GET[page];
-switch($page){
-	case 1:
-	    echo '<a href="php/sct_php_1/1.php?page=1">Я помню чудное мгновенье...</a>';
-	    break;
-	case 2:
-	    echo '<a href="php/sct_php_1/1.php?page=2">Евгений Онегин</a>';
-	    break;
-	case 3:
-	    echo '<a href="php/sct_php_1/1.php?page=3">Зимнее утро</a>';
-	    break;
-	case 4:
-	    echo '<a href="php/sct_php_1/1.php?page=4">Осень</a>';
-	    break;
-	default:
-		echo '<a href="php/sct_php_1/1.php?page=1">Я помню чудное мгновенье...</a><br>
-		     <a href="php/sct_php_1/1.php?page=2">Евгений Онегин</a></a><br>
-			 <a href="php/sct_php_1/1.php?page=3">Зимнее утро</a><br>
-			 <a href="php/sct_php_1/1.php?page=4">Осень</a>';
-}
-
+<?php
+$page = $_GET['page'];
+if(empty($page)){
+	echo 'Я помню чудное мгновенье...<br>
+			Евгений Онегин<br>
+			Зимнее утро<br>
+			Осень';
+					
+}else
+	switch($page){
+		case 1:
+			echo 'Я помню чудное мгновенье...';
+			break;
+		case 2:
+			echo 'Евгений Онегин';
+			break;
+		case 3:
+			echo 'Зимнее утро';
+			break;
+		case 4:
+			echo 'Осень';
+			break;
+		default:
+			echo "Такого значения нет";
+	}
 
 
 
