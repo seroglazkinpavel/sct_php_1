@@ -14,10 +14,10 @@
 			echo '<br>';
 			
 			function getUserData($get){
-				if(!empty(($_GET['login']) || ($_GET['password']) || ($_GET['age']))){
-					if($_GET['login']) echo 'логин-'.$_GET['login'];
-					elseif($_GET['password']) echo 'паспорт-'.$_GET['password'];
-					elseif($_GET['age']) echo 'возраст-'.$_GET['age'];
+				if(!empty(($get['login']) || ($get['password']) || ($get['age']))){
+					if(isset($get['login'])) echo 'логин-'.$get['login'];
+					elseif(isset($get['password'])) echo 'паспорт-'.$get['password'];
+					elseif(isset($get['age'])) echo 'возраст-'.$get['age'];
 				}else echo '<br>данных нет';
 			}
 			getUserData($_GET);
