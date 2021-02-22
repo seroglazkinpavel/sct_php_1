@@ -1,10 +1,10 @@
 <?php
 $page = $_GET['page'];
 if(empty($page)){
-	echo 'Я помню чудное мгновенье...<br>
-			Евгений Онегин<br>
-			Зимнее утро<br>
-			Осень';
+	 echo  '<a href="3.php?page=1">Я помню чудное мгновенье...</a><br>
+		    <a href="3.php?page=2">Евгений Онегин</a><br>
+			<a href="3.php?page=3">Зимнее утро</a><br>
+			<a href="3.php?page=4">Осень</a>';
 					
 }else
 	switch($page){
@@ -22,7 +22,8 @@ if(empty($page)){
 			break;
 		default:
 			echo "Такого значения нет";
-	}
+}
+	
 
 
 
