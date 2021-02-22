@@ -8,11 +8,11 @@
 	<form action="<?=$_SERVER['REQUEST_URI']?>" method='post'>
 		<input type="text" name="number1" value="<?=($_POST['number1']);?>" placeholder="Первое число">
 		<select class="operations" name="operation">
-			<option >Выберите действия</option>
-			<option value='plus'>+</option>
-			<option value='minus'>-</option>
-			<option value="multiply">*</option>
-			<option value="divide">/</option>
+			<option value="">Выберите действия</option>
+			<option value='plus' <?php if($_POST['operation'] === 'plus') echo 'selected="selected"'; ?>>+</option>
+			<option value='minus' <?php if($_POST['operation'] === 'minus') echo 'selected="selected"'; ?>>-</option>
+			<option value='multiply' <?php if($_POST['operation'] === 'multiply') echo 'selected="selected"'; ?>>*</option>
+			<option value='divide' <?php if($_POST['operation'] === 'divide') echo 'selected="selected"'; ?>>/</option>
 		</select>
 		<input type="text" name="number2" value="<?=($_POST['number2']);?>" placeholder="Второе число">
 		
@@ -65,3 +65,4 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+	
