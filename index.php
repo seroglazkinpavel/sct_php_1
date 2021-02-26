@@ -13,7 +13,7 @@
 			echo '<br>';
 			$page = $_GET['page'];
 			if(empty($_GET['page']) && $_GET['page'] != 3 && $_GET['page'] != 2){
-				require_once '1.php';
+				require_once 'page/1.php';
 			}else{
 				echo getFile($page);
 			}
@@ -21,13 +21,13 @@
 			function getFile($page){													
 				switch($page){
 					case 1:
-						require_once '1.php';
+						require_once 'page/1.php';
 						break;
 					case 2:
-						require_once '2.php';
+						require_once 'page/2.php';
 						break;
 					case 3:
-						require_once '3.php';
+						require_once 'page/3.php';
 						break;					
 				}				
 			}

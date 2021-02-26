@@ -6,10 +6,7 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<h1>Зимнее утро</h1>
-		<img src="img/4.jpg">
+		<h1>Евгений Онегин</h1>
+		<img src="../sct_php_1/img/2.jpg">
 	</body>
 </html>
-
-
-
