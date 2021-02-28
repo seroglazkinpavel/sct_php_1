@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<h1>Евгений Онегин</h1>
-		<img src="../sct_php_1/img/2.jpg">
+		<h1>Привет мир</h1>
+		
 	</body>
 </html>
