@@ -6,10 +6,9 @@ $search = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л
 $replace = ['a', 'b', 'v', 'g', 'd', 'e', 'g', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'i', 'e', 'A', 'B', 'V', 'G', 'D', 'E', 'G', 'Z', 'I', 'Y', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'F', 'I', 'E'];
 $str = str_replace($search, $replace, $string);
 $str = strtr($str, ['ё'=>"yo",'х'=>"h",'ц'=>"ts",'ч'=>"ch",'ш'=>"sh",'щ'=>"shch",'ъ'=>'','ь'=>'','ю'=>"yu",'я'=>"ya",'Ё'=>"Yo",'Х'=>"H",'Ц'=>"Ts",'Ч'=>"Ch",'Ш'=>"Sh",'Щ'=>"Shch",'Ъ'=>'','Ь'=>'','Ю'=>"Yu",'Я'=>"Ya"]);
- 	
-if(!empty($_GET['page'])){
-	$page = $_GET['page'];
-}
+echo $str;
+
+$page = !empty($_GET['page']) ? $_GET['page'] : null;
 function getFile($page = null){													
 	switch($page){
 		case 1:
@@ -24,17 +23,19 @@ function getFile($page = null){
 	}	
 }
 
-$content = getFile($page);
+getFile($page);
 
-function setDate($content){ 
+function setDate($page){ 
 	$date = date('d.m.Y H:i:s');
-	switch($content){
-		case require_once '1.php':
+	switch($page){
+		case 1:
 			$record = $date.'-'.'Форма';
 			break;
-	    case require_once 'page/2.php':
+	    case 2:
 		    $record = $date.'-'.'Приветствие пользователя';
 			break;
+		default:
+       	    $record = $date.'-'.'Такой страницы нет.';	
 	}		
 	$rec = file_put_contents('log.php', $record);
 	return $rec;
