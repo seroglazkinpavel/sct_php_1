@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 03 2021 г., 20:43
+-- Время создания: Мар 05 2021 г., 12:52
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.1.33
 
@@ -45,7 +45,7 @@ CREATE TABLE `category` (
 CREATE TABLE `order` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `status` enum('0','1') NOT NULL DEFAULT '0',
+  `id_status` enum('1','2','3','4') DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_at` timestamp NULL DEFAULT NULL,
   `currency` varchar(10) NOT NULL,
@@ -92,6 +92,27 @@ CREATE TABLE `product` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `status_order`
+--
+
+CREATE TABLE `status_order` (
+  `id_status` int(10) UNSIGNED NOT NULL,
+  `name` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `status_order`
+--
+
+INSERT INTO `status_order` (`id_status`, `name`) VALUES
+(1, 'Заказан'),
+(2, 'Оплачен'),
+(3, 'Отправлен'),
+(4, 'Доставлен');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `user`
 --
 
@@ -120,7 +141,8 @@ ALTER TABLE `category`
 -- Индексы таблицы `order`
 --
 ALTER TABLE `order`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `status` (`id_status`);
 
 --
 -- Индексы таблицы `order_product`
@@ -137,6 +159,12 @@ ALTER TABLE `product`
   ADD UNIQUE KEY `alias` (`alias`),
   ADD KEY `category_id` (`category_id`,`brand_id`),
   ADD KEY `hit` (`hit`);
+
+--
+-- Индексы таблицы `status_order`
+--
+ALTER TABLE `status_order`
+  ADD PRIMARY KEY (`id_status`);
 
 --
 -- Индексы таблицы `user`
@@ -173,6 +201,12 @@ ALTER TABLE `order_product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT для таблицы `status_order`
+--
+ALTER TABLE `status_order`
+  MODIFY `id_status` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
