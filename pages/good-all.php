@@ -1,5 +1,6 @@
 <h1>Каталог товаров</h1>
 <?php
+
 $db = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
 if(!$db) die(mysqli_connect_error());
 mysqli_set_charset($db, "utf8") or die('Не установлена кодировка');
@@ -14,7 +15,7 @@ foreach ($rows as $row) {
 	echo '<hr>';
 	
 }
-//paqes/good-one.php?id={$row['id']}    http://php/sct_php_1/?page=good-one
+
 	
 	
 

@@ -47,6 +47,7 @@ function getMenu()
 			<li><a href="?page=about-us">О нас</a></li>
 			<li><a href="?page=contacts">Контакты</a></li>
 			<li><a href="?page=good-all">Каталог товаров</a></li>
+			<li><a href="?page=adding-products">Добавление товаров</a></li>
         </ul>
     ';
 }
