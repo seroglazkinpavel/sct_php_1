@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 05 2021 г., 12:52
+-- Время создания: Мар 06 2021 г., 20:40
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.1.33
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: ` sct`
+-- База данных: `sct`
 --
 
 -- --------------------------------------------------------
@@ -75,10 +75,7 @@ CREATE TABLE `order_product` (
 
 CREATE TABLE `product` (
   `id` int(10) UNSIGNED NOT NULL,
-  `category_id` tinyint(3) UNSIGNED NOT NULL,
-  `brand_id` tinyint(3) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
-  `alias` varchar(255) NOT NULL,
   `content` text DEFAULT NULL,
   `price` float NOT NULL DEFAULT 0,
   `old_price` float NOT NULL DEFAULT 0,
@@ -88,6 +85,15 @@ CREATE TABLE `product` (
   `img` varchar(255) NOT NULL DEFAULT 'no_image.jpg',
   `hit` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `product`
+--
+
+INSERT INTO `product` (`id`, `title`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`) VALUES
+(34, 'Телевизор', NULL, 33000, 0, '1', NULL, NULL, 'no_image.jpg', '0'),
+(35, 'Компьютер', NULL, 27000, 0, '1', NULL, NULL, 'no_image.jpg', '0'),
+(36, 'Фотоаппарат', NULL, 8000, 0, '1', NULL, NULL, 'no_image.jpg', '0');
 
 -- --------------------------------------------------------
 
@@ -156,8 +162,6 @@ ALTER TABLE `order_product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `alias` (`alias`),
-  ADD KEY `category_id` (`category_id`,`brand_id`),
   ADD KEY `hit` (`hit`);
 
 --
@@ -200,7 +204,7 @@ ALTER TABLE `order_product`
 -- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT для таблицы `status_order`
