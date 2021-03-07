@@ -8,7 +8,7 @@ if(!empty($_POST['login'])){
 		$_SESSION['admin'] = ADMIN;
 		$_SESSION['res'] = '<span style="color:green;"><b>Вы успешно авторизовались. Зайдите в меню: "Добавление товаров"</b></span>';
 	}else{
-		$_SESSION['res'] = '<span style="color:red;"><b>Неверный логин!</b></span>';
+		$_SESSION['res'] = '<span style="color:#ff0000;"><b>Неверный логин!</b></span>';
 	}
 	header("Location: ?page=auth-form");
 	die;
