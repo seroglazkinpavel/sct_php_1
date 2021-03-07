@@ -1,16 +1,23 @@
 <?php
-if (isset($_POST['myform'])) {
-        echo $title = $_POST['title']?? false;
-        echo $price = $_POST['price']?? false;
+session_start();
+
+if( isset($_GET['do']) && $_GET['do'] == 'exit' ) unset($_SESSION['admin']);
+if( !isset($_SESSION['admin']) ) die('Вы не авторизованы! <a  href="?page=auth-form"><b>Авторизуйтесь</b></a>');
+echo "Добро пожаловать, <b>{$_SESSION['admin']}!</b> ";
 
 $db = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
 if(!$db) die(mysqli_connect_error());
 mysqli_set_charset($db, "utf8") or die('Не установлена кодировка');		
 	
-$query = "INSERT INTO `product` (`id`, `title`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`)
-				VALUES (NULL, '$title', NULL, '$price', '0', '1', NULL, NULL, 'no_image.jpg', '0')";
-$res = mysqli_query($db, $query);
-				
+if (isset($_POST['myform'])) {
+    $title = mysqli_real_escape_string($db, trim($_POST['title']))?? false;
+    $price = trim($_POST['price'])?? false;
+	if(!empty($title) && !empty($title) && is_numeric($price)) {
+		$query = "INSERT INTO `product` (`id`, `title`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`)
+							 VALUES (NULL, '$title', NULL, '$price', '0', '1', NULL, NULL, 'no_image.jpg', '0')";
+		$res = mysqli_query($db, $query);		
+	}else		
+		echo '<h2 style="color:red">Не правильно заполнена форма<h2>';				
 }		
 ?>
 <!DOCTYPE html>
@@ -20,8 +27,8 @@ $res = mysqli_query($db, $query);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
-		<h1>Добавление товаров</h1>
+	<body><a href="?page=adding-products&do=exit">Logout</a>
+		<h2>Добавление товаров</h2>
 		<form action="" method="post">
 			<div>
 				Название: <input type="text" name="title" value="" />
