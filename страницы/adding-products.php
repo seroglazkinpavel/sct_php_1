@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['myform'])) {
-        echo $title = $_POST['title']?? false;
-        echo $price = $_POST['price']?? false;
+         $title = $_POST['title']?? false;
+         $price = $_POST['price']?? false;
 
 $db = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
 if(!$db) die(mysqli_connect_error());
