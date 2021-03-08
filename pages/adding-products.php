@@ -3,6 +3,7 @@ session_start();
 
 if( isset($_GET['do']) && $_GET['do'] == 'exit' ) unset($_SESSION['admin']);
 if( !isset($_SESSION['admin']) ) die('Вы не авторизованы! <a  href="?page=auth-form"><b>Авторизуйтесь</b></a>');
+
 echo "Добро пожаловать, <b>{$_SESSION['admin']}!</b> ";
 
 $db = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
@@ -15,7 +16,10 @@ if (isset($_POST['myform'])) {
 	if(!empty($title) && !empty($title) && is_numeric($price)) {
 		$query = "INSERT INTO `product` (`id`, `title`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`)
 							 VALUES (NULL, '$title', NULL, '$price', '0', '1', NULL, NULL, 'no_image.jpg', '0')";
-		$res = mysqli_query($db, $query);		
+		$res = mysqli_query($db, $query);
+		if($res) echo 'Товар добавлен';
+		mysqli_close($db);
+		exit;
 	}else		
 		echo '<h2 style="color:red">Не правильно заполнена форма<h2>';				
 }		

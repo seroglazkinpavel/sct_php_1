@@ -14,3 +14,5 @@ foreach ($rows as $row) {
 	echo "Цена: {$row['price']} <br>";
 	echo '<hr>';
 }
+mysqli_close($db);
+exit;

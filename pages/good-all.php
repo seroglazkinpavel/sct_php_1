@@ -15,7 +15,8 @@ foreach ($rows as $row) {
 	echo '<hr>';
 	
 }
-
+mysqli_close($db);
+exit;
 	
 	
 
