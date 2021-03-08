@@ -1,12 +1,19 @@
 <h1>Товар</h1>
 <?php
-
-$db = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
-if(!$db) die(mysqli_connect_error());
-mysqli_set_charset($db, "utf8") or die('Не установлена кодировка');
+function instance(){
+	static $link;
+	if($link === null){
+		$link = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
+		if(!$link) die(mysqli_connect_error());
+		mysqli_set_charset($link, "utf8") or die('Не установлена кодировка');
+	}
+	return $link;
+}
+//include 'sct_php_1/pages/finction.php';
+$link = instance();
 
 $id = $_GET['id']?? false;
-$res = mysqli_query($db, "SELECT title, price FROM  product WHERE id =$id") or die(mysqli_error($db));
+$res = mysqli_query($link, "SELECT title, price FROM  product WHERE id =$id") or die(mysqli_error($db));
 
 $rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
 foreach ($rows as $row) {		
@@ -14,5 +21,5 @@ foreach ($rows as $row) {
 	echo "Цена: {$row['price']} <br>";
 	echo '<hr>';
 }
-mysqli_close($db);
+mysqli_close($link);
 exit;
