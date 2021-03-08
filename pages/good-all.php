@@ -17,7 +17,3 @@ foreach ($rows as $row) {
 }
 mysqli_close($db);
 exit;
-	
-	
-
-
