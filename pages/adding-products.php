@@ -5,7 +5,7 @@ if( isset($_GET['do']) && $_GET['do'] == 'exit' ) unset($_SESSION['admin']);
 if( !isset($_SESSION['admin']) ) die('Вы не авторизованы! <a  href="?page=auth-form"><b>Авторизуйтесь</b></a>');
 
 echo "Добро пожаловать, <b>{$_SESSION['admin']}!</b> ";
-function instance(){
+/*function instance(){
 	static $link = null;
 	if($link === null){
 		$link = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
@@ -13,8 +13,8 @@ function instance(){
 		mysqli_set_charset($link, "utf8") or die('Не установлена кодировка');
 	}
 	return $link;
-}
-//include 'sct_php_1/pages/finction.php';		
+}*/
+include 'lib.php';		
 $link = instance();	
 if (isset($_POST['myform'])) {
     $title = mysqli_real_escape_string($link, trim($_POST['title']))?? false;
