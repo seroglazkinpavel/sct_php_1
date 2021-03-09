@@ -5,17 +5,9 @@ if( isset($_GET['do']) && $_GET['do'] == 'exit' ) unset($_SESSION['admin']);
 if( !isset($_SESSION['admin']) ) die('Вы не авторизованы! <a  href="?page=auth-form"><b>Авторизуйтесь</b></a>');
 
 echo "Добро пожаловать, <b>{$_SESSION['admin']}!</b> ";
-/*function instance(){
-	static $link = null;
-	if($link === null){
-		$link = @mysqli_connect('127.0.0.1', 'root', 'root', 'sct')or die('Ошибка соединения с БД');
-		if(!$link) die(mysqli_connect_error());
-		mysqli_set_charset($link, "utf8") or die('Не установлена кодировка');
-	}
-	return $link;
-}*/
-include 'lib.php';		
-$link = instance();	
+		
+$link = instance();
+	
 if (isset($_POST['myform'])) {
     $title = mysqli_real_escape_string($link, trim($_POST['title']))?? false;
     $price = trim($_POST['price'])?? false;
@@ -23,7 +15,7 @@ if (isset($_POST['myform'])) {
 		$query = "INSERT INTO `product` (`id`, `title`, `content`, `price`, `old_price`, `status`, `keywords`, `description`, `img`, `hit`)
 							 VALUES (NULL, '$title', NULL, '$price', '0', '1', NULL, NULL, 'no_image.jpg', '0')";
 		$res = mysqli_query($link, $query);
-		if($res) echo 'Товар добавлен';
+		if($res) echo 'Товар добавлен.<a  href="/sct_php_1"><b>Переход на главную</b></a>';
 		mysqli_close($link);
 		exit;
 	}else		
