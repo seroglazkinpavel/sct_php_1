@@ -12,7 +12,6 @@ if(empty($_SESSION['use'])){
 			<input type="text" name="password">
 			<button>Авторизоваться</button>
 		</form>';
-	}else {
-        $admin = $_SESSION['use'] = ADMIN;
-	    echo '<span style="color:green;"><b>Добро пожаловать, <b>'."$admin".'!</b> <a href="3.php?do=exit">Logout</a></b></span>';
+	}else {$admin = $_SESSION['use'] = ADMIN;
+	echo '<span style="color:green;"><b>Добро пожаловать, <b>'."$admin".'!</b> <a href="3.php?do=exit">Logout</a></b></span>';
 }	
