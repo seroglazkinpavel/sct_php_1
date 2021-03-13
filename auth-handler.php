@@ -18,6 +18,3 @@ if(isset($_SESSION['res'])){
 	echo $_SESSION['res'];
 	unset($_SESSION['res']);
 }
-
-
-
