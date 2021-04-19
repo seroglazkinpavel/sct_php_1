@@ -1,0 +1,24 @@
+<?php
+session_start();
+if( isset($_GET['do']) && $_GET['do'] == 'exit' ) {
+	unset($_SESSION['auth']['user']);
+	header("Location: /");
+}
+?>
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, width=device-width">
+		<title>Учёт книг в библиотеке</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>	
+		<main>
+			<header>
+				<img src="images/library.jpg">
+			</header>									
+			{{__CONTENT__}}								
+		</main>	
+	</body>
+</html>

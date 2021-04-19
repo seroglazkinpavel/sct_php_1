@@ -1,0 +1,609 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	background-image: url(../images/background.jpg);
+	/*font-family: 'Open Sans';*/
+	font-family: Montserrat, sans-serif;
+}
+
+main {	
+	max-width: 1024px;
+	/*height: 800px;*/
+	margin: 40px auto;
+	border: 1px solid #fff;
+	background-color: #F3BE5E;
+}
+
+.content {
+	display : flex;	
+}
+
+.panel {	
+	text-align: center;
+	margin: 40px 20px;
+	border:  1px solid #fff;
+}	
+
+.main_panel {
+	padding:10px;
+	background-color: #CA794E;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.panel_user {
+	font-size : 30px;
+	text-align: center;
+}
+
+.panel_user span {
+	color: #411A15;
+	
+}
+
+.panel_user a {
+	text-decoration : none;
+	color: #626E7C;
+}
+
+ul {
+list-style: none;
+}
+
+.panel nav ul li {
+	border:  1px solid #FA9B23;
+	margin-top: 10px;
+	background-color: #FFD153;
+	
+}
+
+.panel nav ul li a {
+	display : block;
+	margin: 10px auto;
+	color: #411A15;
+	/*font-family: 'Open Sans';*/
+	font-style: normal;
+	font-weight: 400;
+	font-size : 18px;
+	text-decoration : none;
+}
+
+.system {
+	margin: 20px auto;
+}
+
+.entrance_system {
+	margin: 40px auto;
+	max-width: 700px;
+}
+	
+h1 {
+	text-align: center;
+	/*font-family: Open Sans;*/ 
+	
+	color: #411A15;
+}
+
+.container {
+  max-width: 700px;
+  margin: 20px auto 40px;
+  border: 1px solid #e3e3e3;
+  background-color: #DBE6EF;
+}
+
+.user {
+	margin-top: 10px;
+	margin-left: 15px;
+	font-size: 18px;
+}
+
+.form {
+	border: 1px solid #e3e3e3;
+	margin: 15px 15px 15px 15px;
+	background-color: #F0F0F0;
+}
+
+#authoriz {
+	margin: 20px auto;
+	width: 400px;
+}
+
+label {
+  font-size: 24px;
+}
+
+button {
+  font-size: 18px;
+  background-color: #B4E0F9;
+  color: white;
+  cursor: pointer;
+  border:  1px solid #94B5C2;
+  padding: 15px 35px;
+  margin-top: 5px;
+}
+
+.logout {
+	border:  1px solid #94B5C2;
+	background-color: #D4D4D4;
+	margin-left: 160px;
+	padding: 15px 35px;	
+	font-size: 18px;
+}
+
+.logout a {
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.container input {
+	margin: 10px auto;
+    width: 400px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 15px;
+    font-size: 18px;
+    display: block;
+}
+
+/*Профиль администратора*/
+.content_staff {
+	width: 900px;
+	margin: 20px auto;
+}
+.employee {
+	width: 900px;
+	margin: 20px auto;
+}
+
+.container_staff {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid #e3e3e3;
+  background-color: #DBE6EF;
+}
+
+.staff {
+	display : flex;
+	justify-content : space-between;
+	margin: 20px;
+}
+
+.staff input{
+	margin: 10px auto;
+    width: 200px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 15px;
+    font-size: 18px;
+    display: block;
+}
+
+.authoriz {
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 250px;
+}
+
+.user_staff {
+	margin-top: 10px;
+	margin-left: 15px;
+	font-size: 20px;
+}
+
+.user_form {
+	
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.container_staff .staff label {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.staff button {
+	margin-bottom: 15px;
+	margin-top: 10px;
+	margin-left: 25px;
+    font-size: 18px;
+    background-color: #B4E0F9;
+    color: white;
+    cursor: pointer;
+    border:  1px solid #94B5C2;
+    padding: 10px 35px;
+}
+
+.addendum table {
+	border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px .container_staff .form .staff */
+    width: 550px;
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками.container_staff .form .staff */
+    background-color: #fff;
+	margin-top: 10px;
+}
+
+.addendum th, td {
+    border-collapse: collapse;
+    border: 1px solid #e3e3e3;
+    padding: 5px;
+}
+
+/*Профиль сотрудника*/
+
+.center {
+	margin: 0 auto 10px;
+}
+
+.avatar {
+	margin: 10px auto;
+}
+
+.avatar img {
+	display: block;
+	margin: 10px auto;
+}
+
+.avatar_info p {
+	text-align: center;
+}
+
+.container_form {
+	max-width: 700px;
+	margin: 10px auto;
+	padding: 10px auto;
+	border: 1px solid #e3e3e3;
+	background-color: #DBE6EF;
+}
+
+#change_avatar,#change_name,#change_password {	
+	margin: 15px auto;	
+}
+
+.container_form .form label {
+	margin: 65px;
+}
+
+.container_form .form input {
+	margin: 10px auto;
+    width: 400px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 15px;
+    font-size: 18px;
+    display: block;
+}
+
+.submit input {
+	background-color: #B4E0F9;
+}
+
+/*Регистрация сотрудника*/
+
+.container_registration {
+	/*max-width: 700px;*/	
+	margin: 40px auto;
+	border: 1px solid #e3e3e3;
+	background-color: #DBE6EF;
+}
+	
+.form_registration {
+	border: 1px solid #e3e3e3;
+	margin: 15px;
+	background-color: #F0F0F0;
+}
+
+.form_registration form {	
+	margin: 15px;	
+}
+
+.container_registration input{
+	margin: 10px auto;
+    width: 400px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 15px;
+    font-size: 18px;
+    display: block;
+}
+
+.reg a {
+	text-decoration: none;
+	font-size: 18px;
+	color: #626E7C;
+}
+
+/*Авторизация сотрудника*/
+#authoriz_employee {
+	margin: 20px ;
+	width: 400px;
+}
+
+/*Профиль читателя*/
+
+.reader_system {
+	max-width: 900px;
+	margin: 20px auto;
+}
+
+.staff_reader {
+	display: flex;
+	justify-content : space-between;
+	margin: 20px;
+}
+
+.positive_outcome {
+	margin-top: 15px;
+	color: #866E26;
+}
+
+.menu {
+	display : flex;	
+	justify-content : space-between;
+}
+	
+.item_menu a {
+	display : block;
+	color: #411A15;
+	border:  1px solid #FA9B23;
+	padding: 15px;
+	background-color: #FFD153;
+	font-style: normal;
+	font-weight: 400;
+	font-size : 18px;
+	text-decoration : none;
+	
+}
+.user_reader {	
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+.container_reader {
+	max-width: 900px;	
+	margin: 20px auto;
+	border: 1px solid #e3e3e3;
+	background-color: #DBE6EF;
+}
+
+.addendum_search {
+	/*margin: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;*/
+	float: left;
+}
+
+.container_reader.staff label {
+    font-size: 18px;   
+}
+
+.container_reader input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 15px;
+    font-size: 18px;
+    display: block;
+}	
+
+.search {
+	display : flex;	
+}
+
+.input_search {
+	margin-left: 10px;
+	background-color: #B4E0F9;
+	cursor: pointer;
+    border:  1px solid #94B5C2;
+}
+
+.information {
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size: 20px;
+}
+
+.addendum_search table  {
+    border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px */
+    width: 550px;
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками*/
+    background-color: #fff;
+}
+
+.addendum_search th, td {
+    border-collapse: collapse;
+    border: 1px solid #e3e3e3;
+    padding: 5px;
+}
+
+/*Профиль выдача книг*/
+
+.container_search {
+	max-width: 900px;	
+	margin: 20px auto;
+	border: 1px solid #e3e3e3;
+	background-color: #DBE6EF;
+}
+
+.book_distribution_table {
+	width: 810px;
+	border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px */
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками*/
+    background-color: #fff;
+	margin-top: 15px;
+}
+
+fieldset th, td {
+    border-collapse: collapse;
+    border: 1px solid #e3e3e3;
+    /*padding: 5px;*/
+	height: 30px;
+}
+
+
+
+.container_search input{
+	margin-left: 10px;
+    box-sizing: border-box;
+    height: 30px;
+    border: 1px solid #e3e3e3;    
+    font-size: 18px;
+    display: block;
+}
+
+.container_search .input_search{
+	padding: 0px 15px;
+	background-color: #B4E0F9;
+	cursor: pointer;
+    border:  1px solid #94B5C2;
+}
+
+ fieldset {
+	border: 1px solid #B2BCB4;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin: 10px;
+}
+
+.book_distribution_search {
+	display : flex;
+	margin-top: 5px;
+}
+
+.book_distribution_search label {
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+/*Оформление выдачи книг*/
+.container_decoration {
+	max-width: 900px;	
+	margin: 20px auto;
+	border: 1px solid #e3e3e3;
+	background-color: #DBE6EF;
+}
+
+.form_decoration {
+	border: 1px solid #e3e3e3;
+	margin: 15px 15px 15px 15px;
+	background-color: #F0F0F0;
+	display : flex;	
+	justify-content : space-between;
+}
+
+#datetime {
+	margin-left: 87px;
+}
+
+#text_staff {
+	margin-left: 107px;
+}
+  
+#text_reader {
+	margin-left: 116px;
+}
+
+#number {
+	margin-left: 36px;	
+}
+
+#text_book {
+	margin-left: 69px;	
+}
+
+#text_author {
+	margin-left: 141px;
+}
+
+#number_quantity {
+	margin-left: 64px;
+}
+
+#date {
+	margin-left: 66px;
+	width: 169px;
+}
+
+.input_decoration {	
+	margin-left: 279px;
+	padding: 5px 15px;
+	background-color: #B4E0F9;
+	cursor: pointer;
+    border:  1px solid #94B5C2;
+}
+
+/*Выбор читателя*/
+.produce .book_distribution_form .book_reader label {
+	font-size: 16px;
+}
+
+.input_reader {
+	padding: 5px 15px;
+	background-color: #B4E0F9;
+	cursor: pointer;
+    border:  1px solid #94B5C2;
+}
+
+#book_reader_search {
+	width: 100px;
+	height: 26px;
+}
+
+.table_reader {
+	width: 328px;
+	border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px */
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками*/
+    background-color: #fff;
+	margin-top: 15px;
+}
+
+fieldset .table_reader th, td {
+    border-collapse: collapse;
+    border: 1px solid #e3e3e3;
+    /*padding: 5px;*/
+	/*height: 30px;*/
+}
+
+/*Забрать книгу*/
+.addendum_return form {
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+.addendum_return table  {
+    border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px */
+    margin: 5px auto 20px;
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками*/
+    background-color: #fff;
+}
+
+.addendum_return th, td {
+    border-collapse: collapse;
+    border: 1px solid #e3e3e3;
+    padding: 5px;
+}
+
+/*Панель читателя*/
+.list_book fieldset {
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 10px 20px;
+	margin: 10px;
+}
+
+.table_list {
+	width: 630px;
+	border: 1px solid #e3e3e3;/* внешние границы таблицы серого цвета толщиной 1px */
+    border-collapse: collapse;/*убираем пустые промежутки между ячейками*/
+    background-color: #fff;
+	
+}	
