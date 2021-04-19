@@ -1,6 +1,24 @@
 <?php
 session_start();
-
+global $connect;
+	$users_id = $_SESSION['auth']['users_id']?? false;
+	$sql = "SELECT * 
+	            FROM book_distribution
+					JOIN connection ON book_distribution.idReader = connection.idReader
+					JOIN books ON book_distribution.idBook = books.idBook
+						WHERE connection.users_id = '$users_id'";							
+	$result = mysqli_query($connect, $sql)or die(mysqli_error($connect));
+	if(mysqli_num_rows($result) > 0) {
+		$line = mysqli_fetch_assoc($result);
+		$_SESSION['list_book']['Sum'] = $line['Sum'];
+		$_SESSION['list_book']['Data'] = $line['Data'];
+		$_SESSION['list_book']['Time'] = $line['Time'];
+		$_SESSION['list_book']['idBook'] = $line['idBook'];
+		$_SESSION['list_book']['autor'] = $line['autor'];
+		$_SESSION['list_book']['title'] = $line['title'];
+	}else{
+		$_SESSION['list_book']['errors'] = 'Книг на руках нет';
+	}
 if( isset($_GET['do']) && $_GET['do'] == 'exit' ) {
 	unset($_SESSION['auth']);
 	unset($_SESSION['list_book']);
@@ -182,23 +200,4 @@ switch ($_SESSION['auth']['role']) {
 		</div>
 	</div>  
 <?php }	 ?>
-<?php
-global $connect;
-	$users_id = $_SESSION['auth']['users_id']?? false;
-	$sql = "SELECT * 
-	            FROM book_distribution
-					JOIN connection ON book_distribution.idReader = connection.idReader
-					JOIN books ON book_distribution.idBook = books.idBook
-						WHERE connection.users_id = '$users_id'";							
-	$result = mysqli_query($connect, $sql)or die(mysqli_error($connect));
-	if(mysqli_num_rows($result) > 0) {
-		$line = mysqli_fetch_assoc($result);
-		$_SESSION['list_book']['Sum'] = $line['Sum'];
-		$_SESSION['list_book']['Data'] = $line['Data'];
-		$_SESSION['list_book']['Time'] = $line['Time'];
-		$_SESSION['list_book']['idBook'] = $line['idBook'];
-		$_SESSION['list_book']['autor'] = $line['autor'];
-		$_SESSION['list_book']['title'] = $line['title'];
-	}else{
-		$_SESSION['list_book']['errors'] = 'Книг на руках нет';
-	}		
+		
