@@ -3,8 +3,9 @@ session_start();
 require_once 'module_global.php';
 // Изменение аватарки
 if(isset($_POST['change_avatar']))
-{	
-	$path = 'uploads/'.time().$_FILES['avatar']['name'];
+{
+    global $connect;
+    $path = 'uploads/'.time().$_FILES['avatar']['name'];
 	if(!move_uploaded_file($_FILES['avatar']['tmp_name'], $path))
 	{
 		$_SESSION['message'] = 'Ошибка при загрузки сообщения';		
@@ -12,9 +13,7 @@ if(isset($_POST['change_avatar']))
 	{	
 		$avatar = $_SESSION['auth']['users_id'];
 		$query = "UPDATE `users` SET `avatar` = '$path' WHERE `users`.`users_id` = $avatar";
-		$res = mysqli_query($connect, $query);
-		/*if($res) 'OK';
-		else $_SESSION['message'] = mysqli_error($connect);*/		
+		$res = mysqli_query($connect, $query);	
 		redirect();
 	}
 	header("Location: /");
@@ -60,3 +59,6 @@ if(isset($_POST['change_password']))
 	}	
 	header("Location: /");
 }
+
+
+
